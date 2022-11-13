@@ -1,0 +1,33 @@
+button
+{
+	font-size: 3rem;
+	width: 6rem;
+	height: 6rem;
+	border: 1px solid black;
+	cursor: pointer;
+}
+
+#zero
+{
+	width: 12rem;
+}
+
+#equal
+{
+	background-color: springgreen;
+}
+
+#reset
+{
+	background-color: crimson;
+}
+
+.options
+{
+	background-color: indianred;
+}
+
+.operators
+{
+	background-color: deepskyblue;
+}

@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState} from 'react'
+import ButtonGrid from './components/ButtonGrid';
+import Display from './components/Display';
+import { modifyData } from './components/logic';
+import './App.css'
 
 function App() {
+  const [data, setData] = useState([
+    { number: "0", lastNumber: null, currentOperation: null, isOperating: false }
+  ])
+  function updateDisplay(key) {
+    const newData = [...data]
+    modifyData(newData, key)
+    setData([...newData])
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="calculator">
+      <Display data={data} />
+      <ButtonGrid updateDisplay={updateDisplay} />
     </div>
-  );
+  )
 }
 
 export default App;
