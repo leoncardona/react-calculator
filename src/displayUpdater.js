@@ -1,4 +1,4 @@
-import { modifyData } from "./components/logic"
+import { modifyData } from "./logic"
 
 export default function updateDisplay(data, setData, key) {
 	const newData = [...data]
