@@ -1,7 +1,8 @@
 import React from 'react'
 import './ButtonGrid.css'
+import updateDisplay from '../displayUpdater'
 
-export default function ButtonGrid({ updateDisplay }) {
+export default function ButtonGrid({ data, setData }) {
   const buttons = [
     { key: "AC", class: "options", id: "reset" },
     { key: "+/-", class: "options" },
@@ -25,7 +26,7 @@ export default function ButtonGrid({ updateDisplay }) {
   ]
   return (
     buttons.map((button) => (
-      <button onClick={() => updateDisplay(button.key)} key={button.key} id={button.id} className={button.class}>{button.key}</button>
+      <button onClick={() => updateDisplay(data, setData, button.key)} key={button.key} id={button.id} className={button.class}>{button.key}</button>
     ))
   )
 }
